@@ -18,9 +18,39 @@ A small protocol and two reference implementations for **countersigned actions**
 
 It has been running a real business since August 2026 (see `spec/` for the case study when it lands).
 
+## Try it in five minutes
+
+```bash
+git clone https://github.com/boringstud-io/countersigned
+cd countersigned/examples && ./demo.sh
+```
+
+An agent proposes and cannot send. A human countersigns and it runs — once. Then the file is
+edited after signing, and the check catches it and names the line. Needs Python 3.10+ and, the
+first time, the network. No account, no server, no model.
+[What it prints](examples/README.md) · [the ninety-second version](examples/TALK.md)
+
+## What is here
+
+| | |
+|---|---|
+| [`spec/PROTOCOL.md`](spec/PROTOCOL.md) | The canonical form, the payload, the verification order, and the gaps it does not close |
+| [`spec/DATA-CONTRACT.md`](spec/DATA-CONTRACT.md) | The files the actions live in, and the rule that costs data if ignored |
+| [`python/`](python/) | Verifying and signing, 54 tests |
+| [`swift/`](swift/) | The same, for iOS and macOS, 33 tests |
+| [`vectors/vectors.json`](vectors/vectors.json) | Eleven vectors both implementations read from the same file — not a copy each |
+| [`examples/`](examples/) | The five-minute demo |
+| [`runner/`](runner/) | A job runner with no platform under it: the protocol does not need one |
+
 ## Status
 
-Research preview. The specification, the Swift package, the Python package, the test vectors, a minimal runner and a five-minute demo are being extracted from a working system into this repository. Watch the commits.
+Research preview, extracted from a system that is in daily use. The protocol is the deployed
+one: every v3 signature the production workspace has ever made — 80 of them — verifies with
+the package in this repository, unchanged.
+
+Not yet here: the case study, and the v4 cutover (`cc` in the canonical form) on the signing
+side. v4 verifies today; nothing signs it in production yet, deliberately — the reading side
+ships before the writing side.
 
 ## License
 
