@@ -1,5 +1,8 @@
 # countersigned
 
+[![tests](https://github.com/boringstud-io/countersigned/actions/workflows/tests.yml/badge.svg)](https://github.com/boringstud-io/countersigned/actions/workflows/tests.yml)
+[![license](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 **An agent may prepare anything. Nothing reaches the outside world without a human signature.**
 
 ## The problem
@@ -16,7 +19,9 @@ A small protocol and two reference implementations for **countersigned actions**
 4. Before execution, the executing side **verifies** the signature against the device registry and consumes the nonce. No valid signature, no send. A changed file, no send. A replayed nonce, no send.
 5. Afterwards, a **contradiction detector** compares what was signed with what actually went out — and reports the cases where they disagree.
 
-It has been running a real business since August 2026 (see `spec/` for the case study when it lands).
+It has been running a real business since August 2026. What that produced, counted from the
+files — including the incident it did **not** prevent — is in
+[CASE-STUDY.md](CASE-STUDY.md).
 
 ## Try it in five minutes
 
@@ -41,6 +46,8 @@ first time, the network. No account, no server, no model.
 | [`vectors/vectors.json`](vectors/vectors.json) | Eleven vectors both implementations read from the same file — not a copy each |
 | [`examples/`](examples/) | The five-minute demo |
 | [`runner/`](runner/) | A job runner with no platform under it: the protocol does not need one |
+| [`SECURITY.md`](SECURITY.md) | The threat model, and the section saying what this does **not** guarantee |
+| [`CASE-STUDY.md`](CASE-STUDY.md) | Nineteen days of real operation, every number with the command behind it |
 
 ## Status
 
@@ -51,6 +58,16 @@ the package in this repository, unchanged.
 Not yet here: the case study, and the v4 cutover (`cc` in the canonical form) on the signing
 side. v4 verifies today; nothing signs it in production yet, deliberately — the reading side
 ships before the writing side.
+
+## Contributing
+
+Issues and pull requests are welcome; [CONTRIBUTING.md](CONTRIBUTING.md) says what is likely to
+be accepted and what is not. The short version: the specification is the product, so a change to
+`spec/` needs a reason both implementations can be held to, and every protocol change needs a
+vector.
+
+For anything that looks like a vulnerability, use GitHub's private vulnerability reporting
+rather than an issue — see [SECURITY.md](SECURITY.md).
 
 ## License
 
