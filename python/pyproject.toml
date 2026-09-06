@@ -1,0 +1,19 @@
+[project]
+name = "countersigned"
+version = "0.1.0"
+description = "Countersigned agent actions: verify that a human signed exactly this action, before it executes."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = ["cryptography>=42"]
+
+[project.urls]
+Homepage = "https://github.com/boringstud-io/countersigned"
+Specification = "https://github.com/boringstud-io/countersigned/blob/main/spec/PROTOCOL.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["countersigned*"]

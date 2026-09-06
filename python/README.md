@@ -1,0 +1,36 @@
+# countersigned (Python)
+
+Verify that a human signed exactly this action — before it executes.
+
+```python
+from countersigned import Action, Approval, Device, Registry, verify
+
+action = Action(type="mail", to="studio@example.com", subject="Offer",
+                body="Hi,\nthe offer is attached.\n")
+
+verdict = verify(action, approval, registry)   # raises VerificationError with a reason
+```
+
+The library implements the [countersigned protocol](https://github.com/boringstud-io/countersigned/blob/main/spec/PROTOCOL.md):
+a canonical form over the action's content, an ECDSA P-256 signature made by a device-bound
+key, a nonce that is consumed at execution, and a contradiction pass that reports when what
+was sent and what was signed disagree.
+
+It is the verifying half. The signing half lives on the device — see the Swift package in the
+same repository.
+
+## Install
+
+```
+pip install countersigned
+```
+
+## Test vectors
+
+`vectors/vectors.json` in the repository is the contract between implementations. Every
+implementation must pass every vector, including one real approval from a system that has been
+running in production since August 2026 (payload and signature published, content withheld).
+
+## License
+
+Apache 2.0.

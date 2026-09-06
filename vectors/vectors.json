@@ -1,0 +1,207 @@
+{
+  "$comment": "Test vectors for the countersigned protocol. Both implementations must pass every one of them. See spec/PROTOCOL.md. The private key behind `pubkey` is a fixed test key and must never be used for anything real.",
+  "protocol": "nino-go",
+  "vectors": [
+    {
+      "name": "plain-mail",
+      "version": 3,
+      "note": "an ordinary mail action",
+      "action": {
+        "type": "mail",
+        "to": "studio@example.com",
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached.\n"
+      },
+      "canonical": "typ=mail\nan=studio@example.com\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached.\n",
+      "digest": "50e4e4b253e73e85cbdd6bd9d56f8980df267c8917e3c23d7b30d309a4237c7b",
+      "payload": "nino-go-v3|acme/ops|act-plain-mail|approved|50e4e4b253e73e85cbdd6bd9d56f8980df267c8917e3c23d7b30d309a4237c7b|nonce-plain-mail|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEYCIQDsassHxUqRnDKRxT70mfucalDf2+cMKyKeM0vBiiil1AIhAMRUhNhTBO9ZH/P/G03kuZzldm/ML0u0RX6Uk3pC23sE",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "trailing-newline",
+      "version": 3,
+      "note": "the body ends in a newline — it is part of the digest; trimming it changes the result",
+      "action": {
+        "type": "mail",
+        "to": "a@example.com",
+        "subject": "Re: terms",
+        "body": "Fine by us.\n"
+      },
+      "canonical": "typ=mail\nan=a@example.com\nbetreff=Re: terms\nanhang=\ntext=Fine by us.\n",
+      "digest": "0ae23c1641b66bd090857210aea863026fec42aee25be61a821b94de1ec13154",
+      "payload": "nino-go-v3|acme/ops|act-trailing-newline|approved|0ae23c1641b66bd090857210aea863026fec42aee25be61a821b94de1ec13154|nonce-trailing-newline|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIBa+UVl6Mm81GalGFGBU6ApATv6M7bKxXqsvhToEUgoDAiEAyWIX/LcIxFP1OUA4NzgBN91/PPY5ygcez42b82kjJLs=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "whitespace-folding",
+      "version": 3,
+      "note": "every run of whitespace folds to one space in header fields — the 2026-08-26 incident",
+      "action": {
+        "type": "mail",
+        "to": "  a@example.com ",
+        "subject": "Two  spaces\tand a tab",
+        "attachments": [
+          "x.pdf",
+          "y  z.pdf"
+        ],
+        "body": "body"
+      },
+      "canonical": "typ=mail\nan=a@example.com\nbetreff=Two spaces and a tab\nanhang=x.pdf,y z.pdf\ntext=body",
+      "digest": "7e0761b0444c7cf2f67597f9f312b78c1980fe60c816657f8257bfdf0250c00b",
+      "payload": "nino-go-v3|acme/ops|act-whitespace-folding|approved|7e0761b0444c7cf2f67597f9f312b78c1980fe60c816657f8257bfdf0250c00b|nonce-whitespace-folding|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIQDVmoDTP+yjP5UXsFTU30WF/aC/soO5UgeBB+Qrxu+rswIgF+owJZHUGrD59ARZuPvYqXX2ejHdZDbgf88lNqjw+4I=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "empty-fields",
+      "version": 3,
+      "note": "missing fields are the empty string, never null; every action has all lines",
+      "action": {
+        "type": "publish",
+        "body": ""
+      },
+      "canonical": "typ=publish\nan=\nbetreff=\nanhang=\ntext=",
+      "digest": "3993a936f5fe56a02755613ea1f2a4f02e6b3a275cbc0f77db3503b9ddc99e4c",
+      "payload": "nino-go-v3|acme/ops|act-empty-fields|approved|3993a936f5fe56a02755613ea1f2a4f02e6b3a275cbc0f77db3503b9ddc99e4c|nonce-empty-fields|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEQCIDB924yf0JAuZKnJPHySsNgFnEKCcvnyvjheuqcUfwvbAiAE3C81/MnIwWG3ExwV/+W6S+cKt148YyyiXVDiSg3CQw==",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "unicode",
+      "version": 3,
+      "note": "UTF-8 passes through unchanged",
+      "action": {
+        "type": "mail",
+        "to": "ae@example.com",
+        "subject": "Grusse 🌍 uber alles",
+        "attachments": [
+          "Anhang mit Leerzeichen.pdf"
+        ],
+        "body": "Zeile1\nZeile2"
+      },
+      "canonical": "typ=mail\nan=ae@example.com\nbetreff=Grusse 🌍 uber alles\nanhang=Anhang mit Leerzeichen.pdf\ntext=Zeile1\nZeile2",
+      "digest": "35ead3891f510cf18ada5b52a33b05d6c281c42f2a29d603d5ee3b7ce5dc2113",
+      "payload": "nino-go-v3|acme/ops|act-unicode|approved|35ead3891f510cf18ada5b52a33b05d6c281c42f2a29d603d5ee3b7ce5dc2113|nonce-unicode|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIDyE00EjO4IbEb5YQUvMvRcXpHHHvgReJnx0X/jycpPiAiEA5t8+4xgal38JDTMFI6MDaq6ySwfEWJbZgiwqlRieSQk=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "v4-with-cc",
+      "version": 4,
+      "note": "v4 covers cc — this is why v4 exists",
+      "action": {
+        "type": "mail",
+        "to": "a@example.com",
+        "cc": [
+          "b@example.com",
+          "c@example.com"
+        ],
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached.\n"
+      },
+      "canonical": "typ=mail\nan=a@example.com\ncc=b@example.com,c@example.com\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached.\n",
+      "digest": "e490bbc3037e3ec745f6df9da7ba4b8e9a26b5ce9dec668988b78776fe9469fb",
+      "payload": "nino-go-v4|acme/ops|act-v4-with-cc|approved|e490bbc3037e3ec745f6df9da7ba4b8e9a26b5ce9dec668988b78776fe9469fb|nonce-v4-with-cc|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIAWFzcbJL3KebctRApSeBHogf7aHHRHhepJPxRbbq4LoAiEAlf0/69Za/suVWUUuctM94FcsTUbV4FySYcImk4uWgDA=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "v4-without-cc",
+      "version": 4,
+      "note": "v4 without cc is NOT v3: the empty cc line is still there, so the digest differs",
+      "action": {
+        "type": "mail",
+        "to": "a@example.com",
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached.\n"
+      },
+      "canonical": "typ=mail\nan=a@example.com\ncc=\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached.\n",
+      "digest": "7025ce8b0c6bda025bec1396ddf3c78e68f4ca67ee414baa299ad10556c7bdd1",
+      "payload": "nino-go-v4|acme/ops|act-v4-without-cc|approved|7025ce8b0c6bda025bec1396ddf3c78e68f4ca67ee414baa299ad10556c7bdd1|nonce-v4-without-cc|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEYCIQDqQNrvJqSrhvhKNVOUCyqd87gd8Nne9K2PK23m8l0p1gIhAP+vCFHdhtmDNGJW9DGMI9s9xn4aZFK1U0XEsj9Ke2vn",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "valid"
+    },
+    {
+      "name": "tampered-body",
+      "version": 3,
+      "note": "body changed after signing",
+      "action": {
+        "type": "mail",
+        "to": "studio@example.com",
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached, and please cc legal.\n"
+      },
+      "canonical": "typ=mail\nan=studio@example.com\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached, and please cc legal.\n",
+      "digest": "305f691b86b8072d2888664f0a2acc77fe0ed3df1eb8b8b730678da26a6f4132",
+      "payload": "nino-go-v3|acme/ops|act-plain-mail|approved|50e4e4b253e73e85cbdd6bd9d56f8980df267c8917e3c23d7b30d309a4237c7b|nonce-plain-mail|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEYCIQDsassHxUqRnDKRxT70mfucalDf2+cMKyKeM0vBiiil1AIhAMRUhNhTBO9ZH/P/G03kuZzldm/ML0u0RX6Uk3pC23sE",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "invalid",
+      "reason": "digest does not match the signed payload"
+    },
+    {
+      "name": "tampered-cc",
+      "version": 4,
+      "note": "a recipient added after signing — v3 would not have caught this",
+      "action": {
+        "type": "mail",
+        "to": "a@example.com",
+        "cc": [
+          "b@example.com",
+          "c@example.com",
+          "silent@example.com"
+        ],
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached.\n"
+      },
+      "canonical": "typ=mail\nan=a@example.com\ncc=b@example.com,c@example.com,silent@example.com\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached.\n",
+      "digest": "a7782cba5e1213c7fb9878aa0981ddc7b201e7d80d3c9295b9c909703b80f6bc",
+      "payload": "nino-go-v4|acme/ops|act-v4-with-cc|approved|e490bbc3037e3ec745f6df9da7ba4b8e9a26b5ce9dec668988b78776fe9469fb|nonce-v4-with-cc|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIAWFzcbJL3KebctRApSeBHogf7aHHRHhepJPxRbbq4LoAiEAlf0/69Za/suVWUUuctM94FcsTUbV4FySYcImk4uWgDA=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "invalid",
+      "reason": "cc is part of the canonical form in v4"
+    },
+    {
+      "name": "production-signature",
+      "version": 3,
+      "note": "A real approval from a system running in production since August 2026. The action's content is withheld — only the payload, the signature and the public key are published. An implementation that verifies this vector verifies signatures made by the deployed system.",
+      "payload": "nino-go-v3|boringstud-io/spazio|go-villa-svs-2|approved|18ae49df8db45d985958ba8451f38af06219b956179b2ea9023dad1abc393df2|a0e6fdd9-3511-4f06-9abd-13b991d1a16b|2026-08-27T22:37:37Z|dev-db2b064f",
+      "signature": "MEYCIQDCLGTIvVmgXQccfRiPiLblIYMvxMXxRHWbiPhwuNwVEgIhAM9m1+Jc0IupJ1/dE5Gbt1CHRHB5lNNWml1B2ebLxziD",
+      "pubkey": "BPhDObwBwcNYgAM+qYHUXWLNHuVpAG3OuA7Kuq2Xxnr8dFDLHg+uS/7QbwV6tfR6tPq7c6fT8bZocU5PmeJaRvU=",
+      "expect": "valid",
+      "content_withheld": true
+    },
+    {
+      "name": "foreign-workspace",
+      "version": 3,
+      "note": "A genuine signature over a genuine payload — for a different workspace. The signature verifies; the approval must still be refused. An implementation that only checks the signature passes this vector by accident and is wrong. Found in our own reference implementation on 2026-09-06.",
+      "action": {
+        "type": "mail",
+        "to": "studio@example.com",
+        "subject": "Offer",
+        "body": "Hi,\nthe offer is attached.\n"
+      },
+      "canonical": "typ=mail\nan=studio@example.com\nbetreff=Offer\nanhang=\ntext=Hi,\nthe offer is attached.\n",
+      "digest": "50e4e4b253e73e85cbdd6bd9d56f8980df267c8917e3c23d7b30d309a4237c7b",
+      "payload": "nino-go-v3|other/repo|act-plain-mail|approved|50e4e4b253e73e85cbdd6bd9d56f8980df267c8917e3c23d7b30d309a4237c7b|nonce-foreign|2026-09-06T10:00:00Z|dev-00000001",
+      "signature": "MEUCIQDTcv9biI2vFhDDFLOXnc3vXSll+XC8cHym74jGPOlLUQIgFKxgf45QTGtvxdXYZfY0BKEEwQjchieXqt1LCJ9TmTY=",
+      "pubkey": "BIdzRlc+/mvKrv31teIEcsQCBpuOGCYYu5ToGs/AvhDlUlWUbq9DAph7dxui38z7Oxi04P4+WRC/ii0dlqq9XtU=",
+      "expect": "invalid",
+      "reason": "approval is bound to workspace 'other/repo'; verify for 'acme/ops' must refuse",
+      "verify_for": {
+        "workspace": "acme/ops",
+        "action_id": "act-plain-mail"
+      }
+    }
+  ]
+}

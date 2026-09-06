@@ -151,7 +151,11 @@ but an implementation should say which one it used, because it changes what a st
 The executing side runs these checks **in this order** and refuses on the first failure. Order
 matters: cheap and unambiguous checks come first, so a failure names one cause.
 
-1. An approval object exists.
+1. An approval object exists, and its `workspace` and `action-id` are **the ones the
+   verifier is checking for** — not merely the ones the approval names. A signature proves
+   that someone signed that payload; it does not prove the payload belongs here. Skip this
+   and an approval lifted from another workspace, or from another action in the same one,
+   verifies happily.
 2. `status` is `approved` or `rejected`.
 3. `device-id` is present in the device registry.
 4. The registry's public key for that device has not changed since it was last seen. A changed
@@ -165,6 +169,12 @@ matters: cheap and unambiguous checks come first, so a failure names one cause.
 
 Only then may the action execute, and execution **consumes** the nonce by appending to the
 nonce log. — `verify_go.verify()`, `SignaturPruefung.swift`
+
+> **Found while extracting this specification, 2026-09-06.** The first version of the
+> reference implementation checked signature, device, role and nonce — but never compared the
+> approval's workspace and action id against the context it was verifying in. The payload
+> *binds* both values; nobody *checked* them. A test that moved an approval to another
+> workspace passed. This is why step 1 is a step and not an assumption.
 
 Two consequences worth stating: verification is idempotent and side-effect-free until step 8,
 so it may be run for display at any time. And the executor is trusted to run it — the protocol
