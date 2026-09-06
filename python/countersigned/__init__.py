@@ -6,13 +6,16 @@ See spec/PROTOCOL.md for the wire format this implements.
 """
 
 from .canonical import Action, digest_of, one_line
-from .contradiction import Contradiction, Finding, find_contradictions
+from .contradiction import (ActionRecord, Contradiction, Finding,
+                            find_contradictions)
 from .payload import Approval
+from .sign import SigningKey, SoftwareKey, approve
 from .verify import Device, Registry, Verdict, VerificationError, verify, verify_payload
 
 __all__ = [
     "Action", "Approval", "Device", "Registry", "Verdict", "VerificationError",
-    "Contradiction", "Finding", "find_contradictions",
+    "ActionRecord", "Contradiction", "Finding", "find_contradictions",
+    "SigningKey", "SoftwareKey", "approve",
     "verify", "verify_payload", "digest_of", "one_line",
 ]
 __version__ = "0.1.0"
