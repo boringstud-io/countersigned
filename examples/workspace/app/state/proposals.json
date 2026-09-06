@@ -1,0 +1,3 @@
+{
+ "go-0001": "typ=email\nan=studio-orange@example.com\nbetreff=Send the offer to studio orange\nanhang=offer.pdf\ntext=Hi,\n\nsend the offer to studio orange — the details are attached.\n\nBest regards"
+}

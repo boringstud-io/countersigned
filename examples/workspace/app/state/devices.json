@@ -1,0 +1,16 @@
+{
+ "devices": [
+  {
+   "device_id": "demo-laptop",
+   "pubkey": "BCH7udk3DaAiNuE0N5uFDcYyIsghi6WTGhKH4knGeO6GA9kJFXTCLp59vuRjq2yNLmevBU7KT7p9vO6ZKFzABK4=",
+   "role": "owner",
+   "name": "Demo laptop (software key)"
+  }
+ ],
+ "roles": {
+  "owner": [
+   "email"
+  ],
+  "assistant": []
+ }
+}
