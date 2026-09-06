@@ -1,0 +1,65 @@
+# Copy to .github/workflows/ in a BUSINESS repository (not in countersigned).
+#
+# One cycle per run, in a fresh checkout. That is the point: a runner that keeps
+# state between cycles accumulates assumptions, and an assumption is the thing a
+# verifier cannot check.
+name: agent runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      consume:
+        description: "allow execute_action to spend a nonce"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 * * * *"
+
+# The runner writes app/** and pushes. Nothing else.
+permissions:
+  contents: write
+
+concurrency:
+  # Two cycles at once would both take the oldest job.
+  group: agent-runner
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: install the runner
+        run: |
+          pip install --quiet \
+            "git+https://github.com/boringstud-io/countersigned#subdirectory=python" \
+            anthropic
+          git clone --depth 1 https://github.com/boringstud-io/countersigned /tmp/cs
+
+      - name: one cycle
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.email "runner@users.noreply.github.com"
+          git config user.name "agent runner"
+          python /tmp/cs/runner/run.py \
+            --repo . --once --journal runner.jsonl \
+            ${{ inputs.consume && '--consume' || '' }}
+
+      - name: push what it wrote
+        run: git push || echo "nothing to push"
+
+      - name: keep the journal even when the cycle failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runner-journal
+          path: runner.jsonl
+          if-no-files-found: ignore
