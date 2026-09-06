@@ -43,7 +43,7 @@ public struct Action: Equatable, Sendable {
     /// implementations once disagreed here — one replaced newlines only, the other
     /// folded all whitespace — and a subject with two spaces produced two different
     /// digests. A genuine approval would have been rejected as invalid.
-    static func oneLine(_ value: String?) -> String {
+    public static func oneLine(_ value: String?) -> String {
         (value ?? "").split(whereSeparator: \.isWhitespace).joined(separator: " ")
     }
 
