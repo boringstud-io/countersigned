@@ -24,10 +24,19 @@ An implementation that only checks signatures passes the first class and fails t
 
 ## `content_withheld`
 
-`production-signature` comes from a system running in production since August 2026. Its
-payload, signature and public key are published; the action's content is not. It proves that
-an implementation verifies signatures made by the deployed system — without disclosing what
-was signed.
+A vector marked `content_withheld` comes from the system running in production. Its payload,
+signature and public key are published; the action's content is not. Such a vector proves that
+an implementation verifies signatures made by the *deployed* system rather than only signatures
+this repository made itself.
+
+**There is currently no such vector, and that is a known gap.** The first one was withdrawn
+before release: the action id sits inside the signed payload, so it cannot be renamed without
+destroying the signature — and every action id in that production workspace names a person, a
+studio or a company. Publishing one would have published a business contact.
+
+It is restored by signing a single action created for the purpose, whose id names nobody. Until
+then `test_production_signature_verifies` skips, and the skip is printed on every run rather
+than quietly passing.
 
 ## Regenerating
 

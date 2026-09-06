@@ -43,7 +43,7 @@ first time, the network. No account, no server, no model.
 | [`spec/DATA-CONTRACT.md`](spec/DATA-CONTRACT.md) | The files the actions live in, and the rule that costs data if ignored |
 | [`python/`](python/) | Verifying and signing, 54 tests |
 | [`swift/`](swift/) | The same, for iOS and macOS, 33 tests |
-| [`vectors/vectors.json`](vectors/vectors.json) | Eleven vectors both implementations read from the same file — not a copy each |
+| [`vectors/vectors.json`](vectors/vectors.json) | Ten vectors both implementations read from the same file — not a copy each |
 | [`examples/`](examples/) | The five-minute demo |
 | [`runner/`](runner/) | A job runner with no platform under it: the protocol does not need one |
 | [`SECURITY.md`](SECURITY.md) | The threat model, and the section saying what this does **not** guarantee |

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Run one job from a repository's queue.
 
-    python runner/run.py --repo ../spazio --once
-    python runner/run.py --repo ../spazio --once --consume   # may execute approvals
+    python runner/run.py --repo ../your-business-repo --once
+    python runner/run.py --repo ../your-business-repo --once --consume   # may execute approvals
 
 The repository is an ordinary local clone. The runner writes only under app/,
 never writes a decision, and verifies before it executes. What it did is on

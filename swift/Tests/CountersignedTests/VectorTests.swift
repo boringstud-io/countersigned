@@ -140,10 +140,20 @@ struct VectorTests {
         }
     }
 
-    /// One vector must come from the deployed system — otherwise the suite only
+    /// One vector should come from the deployed system — otherwise the suite only
     /// proves that we agree with ourselves.
-    @Test func productionVectorIsPresent() {
-        #expect(Self.vectors.contains { $0.contentWithheld == true })
+    ///
+    /// Currently disabled, and the reason is printed on every run rather than
+    /// quietly passing. The first such vector was withdrawn before release: the
+    /// action id sits inside the signed payload, so it cannot be renamed without
+    /// destroying the signature, and every id in that workspace names a person or
+    /// a company. Restored by signing one action created for the purpose.
+    @Test(.disabled("no production vector in the set — see vectors/README.md"))
+    func productionVectorVerifies() throws {
+        let vector = try #require(Self.vectors.first { $0.contentWithheld == true })
+        #expect(Verifier.verifyPayload(Data(vector.payload.utf8),
+                                       signature: vector.signature,
+                                       pubkey: vector.pubkey))
     }
 
     /// The empty cc line is still a line. Confusing v3 and v4 would let a
