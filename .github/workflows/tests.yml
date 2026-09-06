@@ -1,0 +1,56 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: python — verify and sign
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ./python pytest
+      - run: python -m pytest python/tests -q
+
+  swift:
+    name: swift — the same vectors
+    # macOS, not Linux: the implementation uses CryptoKit, which is Apple-only.
+    # A Linux port would mean swift-crypto and a second code path to keep honest.
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - run: swift test
+
+  runner:
+    name: runner — the refusals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ./python pytest
+      # No API key: the model sits behind a two-method protocol and the tests
+      # script it. What is asserted is what the tools did.
+      - run: cd runner && PYTHONPATH=tests python -m pytest tests -q
+
+  demo:
+    name: demo — still runs from a clean checkout
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # The README claims this works on a fresh machine. This job is that claim,
+      # checked on every push rather than the day someone tries it.
+      - run: cd examples && ./demo.sh
