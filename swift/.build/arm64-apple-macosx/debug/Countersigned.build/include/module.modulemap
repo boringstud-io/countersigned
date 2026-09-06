@@ -1,0 +1,3 @@
+module Countersigned {
+    header "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/include/Countersigned-Swift.h"
+}

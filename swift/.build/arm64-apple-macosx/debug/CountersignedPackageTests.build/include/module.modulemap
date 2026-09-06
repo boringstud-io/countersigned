@@ -1,0 +1,3 @@
+module CountersignedPackageTests {
+    header "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/include/CountersignedPackageTests-Swift.h"
+}

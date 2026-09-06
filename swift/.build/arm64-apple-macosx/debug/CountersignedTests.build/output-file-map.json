@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/primary.swiftdeps"
+  },
+  "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/ContradictionTests.swift": {
+    "dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.d",
+    "object": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.swift.o",
+    "swiftmodule": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.swiftdeps",
+    "diagnostics": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.dia"
+  },
+  "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VectorTests.swift": {
+    "dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.d",
+    "object": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.swift.o",
+    "swiftmodule": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.swiftdeps",
+    "diagnostics": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.dia"
+  },
+  "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VerificationTests.swift": {
+    "dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.d",
+    "object": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.swift.o",
+    "swiftmodule": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.swiftdeps",
+    "diagnostics": "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.dia"
+  }
+}

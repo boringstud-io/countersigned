@@ -1,0 +1,697 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.xctest/Contents/MacOS/CountersignedPackageTests",
+      "packagePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift",
+      "productName" : "CountersignedPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Countersigned-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/sources",
+      "importPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Approval.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/CanonicalForm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Contradiction.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Verification.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Countersigned",
+      "moduleOutputPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/Countersigned.swiftmodule",
+      "objects" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Approval.swift.o",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/CanonicalForm.swift.o",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Contradiction.swift.o",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Verification.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/include/Countersigned-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swift"
+      ],
+      "outputFileMapPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Approval.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/CanonicalForm.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Contradiction.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Verification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/Countersigned.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Approval.swift",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/CanonicalForm.swift",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Contradiction.swift",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Verification.swift"
+      ],
+      "tempsPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.CountersignedPackageTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/sources",
+      "importPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/CountersignedTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "CountersignedPackageTests",
+      "moduleOutputPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/CountersignedPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/include/CountersignedPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swift"
+      ],
+      "outputFileMapPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/CountersignedPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.CountersignedTests-arm64-apple-macosx-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/sources",
+      "importPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/ContradictionTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VectorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VerificationTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/Countersigned.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "CountersignedTests",
+      "moduleOutputPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/CountersignedTests.swiftmodule",
+      "objects" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.swift.o",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.swift.o",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "swift"
+      ],
+      "outputFileMapPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules/CountersignedTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/ContradictionTests.swift",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VectorTests.swift",
+        "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VerificationTests.swift"
+      ],
+      "tempsPath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Countersigned" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Countersigned",
+      "-package-name",
+      "swift",
+      "-c",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Approval.swift",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/CanonicalForm.swift",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Contradiction.swift",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Verification.swift",
+      "-I",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/include/Countersigned-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swift",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "CountersignedPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CountersignedPackageTests",
+      "-package-name",
+      "swift",
+      "-c",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/include/CountersignedPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swift",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "CountersignedTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "CountersignedTests",
+      "-package-name",
+      "swift",
+      "-c",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/ContradictionTests.swift",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VectorTests.swift",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VerificationTests.swift",
+      "-I",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "swift",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Countersigned" : [
+
+    ],
+    "CountersignedPackageTests" : [
+      "CountersignedTests",
+      "Countersigned"
+    ],
+    "CountersignedTests" : [
+      "Countersigned"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Approval.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/CanonicalForm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Contradiction.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Sources/Countersigned/Verification.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/sources"
+    },
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/sources"
+    },
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Approval.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/CanonicalForm.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Contradiction.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/Countersigned.build/Verification.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/ContradictionTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VectorTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/VerificationTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/ContradictionTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VectorTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/Tests/CountersignedTests/VerificationTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/CountersignedTests.build/sources"
+    },
+    "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/julian/Documents/Claude/Projects/countersigned/swift/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
