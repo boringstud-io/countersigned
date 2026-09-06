@@ -18,6 +18,12 @@ run() {
 }
 beat() { [ "${DEMO_PAUSE:-}" = "1" ] && read -r -p "$(printf '%s   ↵ %s' "$DIM" "$OFF")" _ || true; }
 
+if ! python3 -c 'import sys; sys.exit(0 if sys.version_info >= (3, 10) else 1)' 2>/dev/null; then
+  printf 'This needs python 3.10 or newer; python3 here is %s\n' \
+    "$(python3 -V 2>&1 || echo 'not installed')" >&2
+  exit 1
+fi
+
 VENV="${VENV:-.venv}"
 if [ ! -x "$VENV/bin/python" ]; then
   printf '%ssetting up %s (once)…%s\n' "$DIM" "$VENV" "$OFF"
