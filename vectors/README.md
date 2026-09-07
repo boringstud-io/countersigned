@@ -22,21 +22,27 @@ There are **two ways to be invalid**, and conflating them hides bugs:
 
 An implementation that only checks signatures passes the first class and fails the second.
 
-## `content_withheld`
+## `production`
 
-A vector marked `content_withheld` comes from the system running in production. Its payload,
-signature and public key are published; the action's content is not. Such a vector proves that
-an implementation verifies signatures made by the *deployed* system rather than only signatures
-this repository made itself.
+`production-signature` is a real approval from the system running in production, made in the
+owner's Secure Enclave on 2026-09-07. An implementation that reproduces its canonical form,
+digest and payload — and verifies its signature — verifies what the *deployed* system actually
+produces, not only what this repository makes. Without such a vector the suite proves only that
+the two implementations here agree with each other.
 
-**There is currently no such vector, and that is a known gap.** The first one was withdrawn
-before release: the action id sits inside the signed payload, so it cannot be renamed without
-destroying the signature — and every action id in that production workspace names a person, a
-studio or a company. Publishing one would have published a business contact.
+**How it came to exist, because the detour is the interesting part.** The first attempt was
+withdrawn before release: its action id was `go-villa-svs-2`, and the `svs` identified a real
+business contact. The id sits inside the signed payload, so it cannot be renamed without
+destroying the signature — and every one of the 80 signed actions in that workspace names a
+person, a studio or a company. There was no neutral candidate.
 
-It is restored by signing a single action created for the purpose, whose id names nobody. Until
-then `test_production_signature_verifies` skips, and the skip is printed on every run rather
-than quietly passing.
+The fix was to create an action *for this purpose*: recipient `vector@example.com` (RFC 2606,
+goes nowhere), a body that explains itself, an id that names nobody, and a rule on the sending
+side that refuses any card whose id starts with `go-public-`. It was signed like any other
+action and is never sent — so unlike the first attempt, its content can be published in full.
+
+A vector may still carry `content_withheld` instead, publishing only payload, signature and
+key. That form exists for cases where the content must stay private; this one does not need it.
 
 ## Regenerating
 

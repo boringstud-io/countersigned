@@ -43,7 +43,7 @@ first time, the network. No account, no server, no model.
 | [`spec/DATA-CONTRACT.md`](spec/DATA-CONTRACT.md) | The files the actions live in, and the rule that costs data if ignored |
 | [`python/`](python/) | Verifying and signing, 54 tests |
 | [`swift/`](swift/) | The same, for iOS and macOS, 33 tests |
-| [`vectors/vectors.json`](vectors/vectors.json) | Ten vectors both implementations read from the same file — not a copy each |
+| [`vectors/vectors.json`](vectors/vectors.json) | Eleven vectors both implementations read from the same file — not a copy each, one of them a real production signature |
 | [`examples/`](examples/) | The five-minute demo |
 | [`runner/`](runner/) | A job runner with no platform under it: the protocol does not need one |
 | [`SECURITY.md`](SECURITY.md) | The threat model, and the section saying what this does **not** guarantee |
@@ -55,7 +55,11 @@ Research preview, extracted from a system that is in daily use. The protocol is 
 one: every v3 signature the production workspace has ever made — 80 of them — verifies with
 the package in this repository, unchanged.
 
-Not yet here: the case study, and the v4 cutover (`cc` in the canonical form) on the signing
+Every vector in [`vectors/`](vectors/vectors.json) is checked by both implementations, and one
+of them is a genuine approval from the deployed system — signed in a Secure Enclave, published
+in full, verifiable end to end.
+
+Not yet here: the v4 cutover (`cc` in the canonical form) on the signing
 side. v4 verifies today; nothing signs it in production yet, deliberately — the reading side
 ships before the writing side.
 

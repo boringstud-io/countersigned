@@ -105,16 +105,14 @@ def test_binding_is_checked_not_just_the_signature(case):
                action_id=case["verify_for"]["action_id"])
 
 
-@pytest.mark.skipif(not any(c.get("content_withheld") for c in CASES),
-                    reason="no production vector in the set — see vectors/README.md; "
-                           "restored by signing one action whose id names nobody")
 def test_production_signature_verifies():
-    """One vector should come from the deployed system — otherwise the suite only
-    proves that we agree with ourselves.
+    """One vector comes from the deployed system — otherwise the suite would only
+    prove that we agree with ourselves.
 
-    Currently skipped, and the skip is the point: it is visible on every run. The
-    first such vector was withdrawn because its action id, which is inside the
-    signed payload and therefore unchangeable, identified a real business contact.
+    The first attempt at this was withdrawn: its action id, which sits inside the
+    signed payload and therefore cannot be renamed, identified a real business
+    contact. The replacement is an action created for this purpose — signed in the
+    owner's Secure Enclave on 2026-09-07, never sent, and named after nobody.
     """
-    case = next(c for c in CASES if c.get("content_withheld"))
+    case = next(c for c in CASES if c.get("production"))
     assert verify_payload(case["payload"].encode(), case["signature"], case["pubkey"])

@@ -23,6 +23,7 @@ struct VectorTests {
         let expect: String
         let reason: String?
         let contentWithheld: Bool?
+        let production: Bool?
         let verifyFor: Binding?
 
         struct ActionFields: Decodable {
@@ -53,6 +54,7 @@ struct VectorTests {
             case name, version, note, action, canonical, digest, payload, signature
             case pubkey, expect, reason
             case contentWithheld = "content_withheld"
+            case production
             case verifyFor = "verify_for"
         }
 
@@ -143,14 +145,13 @@ struct VectorTests {
     /// One vector should come from the deployed system — otherwise the suite only
     /// proves that we agree with ourselves.
     ///
-    /// Currently disabled, and the reason is printed on every run rather than
-    /// quietly passing. The first such vector was withdrawn before release: the
-    /// action id sits inside the signed payload, so it cannot be renamed without
-    /// destroying the signature, and every id in that workspace names a person or
-    /// a company. Restored by signing one action created for the purpose.
-    @Test(.disabled("no production vector in the set — see vectors/README.md"))
-    func productionVectorVerifies() throws {
-        let vector = try #require(Self.vectors.first { $0.contentWithheld == true })
+    /// The first attempt was withdrawn before release: its action id sits inside
+    /// the signed payload, so it could not be renamed without destroying the
+    /// signature, and every id in that workspace names a person or a company. The
+    /// replacement is an action created for this purpose — signed in the owner's
+    /// Secure Enclave, never sent, named after nobody.
+    @Test func productionVectorVerifies() throws {
+        let vector = try #require(Self.vectors.first { $0.production == true })
         #expect(Verifier.verifyPayload(Data(vector.payload.utf8),
                                        signature: vector.signature,
                                        pubkey: vector.pubkey))
