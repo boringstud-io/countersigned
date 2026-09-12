@@ -43,10 +43,26 @@ still there is worth more than the rest of the suite.
 Both sides write the same shape, so a diff shows the change and not the formatting:
 
 - UTF-8, unescaped (no `\uXXXX` for non-ASCII, no escaped slashes)
-- indent = 1 space, no trailing newline
+- indent = 1 space, **one trailing newline**
 - **field order is model order**, not alphabetical
 
-The last point needs a custom encoder in most languages. Alphabetical ordering re-sorts the
+This line read *no trailing newline* until 12.09.2026, and it was wrong — worth keeping
+as a warning, because of how the error travelled. The Swift side matched `json.dump`, which
+indeed writes none; the agent's writer is not `json.dump` but
+`write_text(json.dumps(...) + "\n")`. Whoever compared them stopped one call too early, the
+assumption was written down *as an assumption*, and by the next document it had become a
+rule. The result: every write from one side removed the byte, the next write from the other
+put it back, and the repository history shows `\ No newline at end of file` alternating for
+weeks. No signature was ever at risk — the digest covers the payload lines, not the file —
+but a contract whose stated purpose is *"a diff shows the change and not the formatting"*
+was producing one line of pure formatting per write. A rule that no test measures against
+the other side's real bytes is a guess with good posture.
+
+Read the corollary too: **an absent key and an explicit `null` mean the same thing.** Writers
+disagree here honestly — a language that omits nil optionals and one that serialises `None`
+both produce valid files — so no reader may treat the difference as information.
+
+The field-order point needs a custom encoder in most languages. Alphabetical ordering re-sorts the
 agent's file on every human write, turning a one-line change into a whole-file diff and every
 merge into a conflict. Hash-order — the default in some standard libraries — is worse: it
 differs between processes, so two identical writes produce different bytes.
