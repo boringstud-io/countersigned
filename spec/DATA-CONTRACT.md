@@ -43,7 +43,7 @@ still there is worth more than the rest of the suite.
 Both sides write the same shape, so a diff shows the change and not the formatting:
 
 - UTF-8, unescaped (no `\uXXXX` for non-ASCII, no escaped slashes)
-- indent = 1 space, **one trailing newline**
+- indent = **the indent the file already has** (1 space for every file either side writes), **one trailing newline**
 - **field order is model order**, not alphabetical
 
 This line read *no trailing newline* until 12.09.2026, and it was wrong — worth keeping
@@ -57,6 +57,14 @@ weeks. No signature was ever at risk — the digest covers the payload lines, no
 but a contract whose stated purpose is *"a diff shows the change and not the formatting"*
 was producing one line of pure formatting per write. A rule that no test measures against
 the other side's real bytes is a guess with good posture.
+
+The indent point has the same shape as the newline one and was found in the same pass. This
+line said *indent = 1 space* flatly. True for every file either implementation writes — and
+the repository holds files with an indent of 2 that neither writes (hand-kept lists, an
+agent-only queue). A writer that takes *1* as a constant reformats the first such file it is
+ever pointed at, from the first line to the last. Measure the file instead: first non-blank
+line after the opening one, count its leading spaces, fall back to 1. Both implementations
+now do; one of them always did, and said why in a comment nobody had read.
 
 Read the corollary too: **an absent key and an explicit `null` mean the same thing.** Writers
 disagree here honestly — a language that omits nil optionals and one that serialises `None`
