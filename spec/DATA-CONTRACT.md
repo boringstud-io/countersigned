@@ -74,7 +74,14 @@ The field-order point needs a custom encoder in most languages. Alphabetical ord
 agent's file on every human write, turning a one-line change into a whole-file diff and every
 merge into a conflict. Hash-order — the default in some standard libraries — is worse: it
 differs between processes, so two identical writes produce different bytes.
-— `KanonischSchreiber.swift`
+
+Note what this section does *not* come with: no published implementation writes these files.
+The libraries in `swift/` and `python/` cover the protocol — canonical form, payload, signing,
+verification — and stop there. Anyone building the storage side reimplements this prose, which
+is precisely how the trailing-newline error above survived for months in an implementation that
+believed it was following the rule. Vectors would have caught it in a minute. Until they exist,
+treat every line here as a claim to verify against the other side's real bytes, not as a
+guarantee.
 
 ## Merge behaviour
 
